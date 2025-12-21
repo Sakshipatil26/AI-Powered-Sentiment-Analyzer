@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SentioMind | AI Sentiment Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>🧠 SentioMind</h1>
+    <p class="subtitle">
+        Advanced AI-Powered Sentiment Analyzer with Smart Suggestions
+    </p>
+
+    <!-- INPUT FORM -->
+    <form method="POST">
+        <textarea
+            name="text"
+            placeholder="Type your thoughts, feelings, review, or message here..."
+            required
+        >{{ text }}</textarea>
+
+        <button type="submit">Analyze Emotion</button>
+    </form>
+
+    <!-- RESULT SECTION -->
+    {% if result %}
+    <div class="result {{ result.color }}">
+        <h2>{{ result.emotion }}</h2>
+
+        <!-- Emotion Intensity Badge -->
+        <div class="badge">
+            Emotion Intensity: <strong>{{ result.intensity }}</strong>
+        </div>
+
+        <!-- Mood Progress Bar -->
+        <div class="progress">
+            <div
+                class="bar"
+                style="width: {{ (result.compound + 1) * 50 }}%;"
+            ></div>
+        </div>
+
+        <!-- AI Advice -->
+        <p class="advice">
+            🧠 <strong>AI Advice:</strong> {{ result.advice }}
+        </p>
+
+        <!-- Motivational Quote -->
+        <p class="quote">
+            💬 "{{ result.quote }}"
+        </p>
+
+        <!-- Sentiment Scores -->
+        <div class="scores">
+            <p><strong>Positive:</strong> {{ result.scores.pos }}</p>
+            <p><strong>Neutral:</strong> {{ result.scores.neu }}</p>
+            <p><strong>Negative:</strong> {{ result.scores.neg }}</p>
+            <p><strong>Compound:</strong> {{ result.compound }}</p>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+<footer>
+    <p>Built with ❤️ using AI, NLP & Flask</p>
+</footer>
+
+</body>
+</html>

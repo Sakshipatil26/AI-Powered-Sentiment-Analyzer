@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #EEF2FF, #ECFEFF);
+    color: #1F2937;
+    min-height: 100vh;
+}
+
+/* Main Container */
+.container {
+    max-width: 700px;
+    margin: 50px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Headings */
+h1 {
+    text-align: center;
+    color: #4F46E5;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #6B7280;
+    margin-bottom: 25px;
+    font-size: 15px;
+}
+
+/* Textarea */
+textarea {
+    width: 100%;
+    height: 140px;
+    padding: 15px;
+    border-radius: 14px;
+    border: 1px solid #D1D5DB;
+    resize: none;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #4F46E5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+/* Button */
+button {
+    width: 100%;
+    margin-top: 18px;
+    padding: 14px;
+    background: linear-gradient(90deg, #4F46E5, #06B6D4);
+    color: white;
+    border: none;
+    border-radius: 14px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(79, 70, 229, 0.3);
+}
+
+/* Result Card */
+.result {
+    margin-top: 30px;
+    padding: 22px;
+    border-radius: 16px;
+    animation: slideUp 0.5s ease-in-out;
+}
+
+/* Result Colors */
+.result.success {
+    background: #ECFDF5;
+    border-left: 6px solid #22C55E;
+}
+
+.result.warning {
+    background: #FFF7ED;
+    border-left: 6px solid #F97316;
+}
+
+.result.danger {
+    background: #FEF2F2;
+    border-left: 6px solid #EF4444;
+}
+
+.result h2 {
+    margin-bottom: 10px;
+}
+
+/* Badge */
+.badge {
+    background: #E0E7FF;
+    color: #1E40AF;
+    padding: 6px 14px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 12px;
+    font-size: 13px;
+}
+
+/* Progress Bar */
+.progress {
+    width: 100%;
+    height: 10px;
+    background: #E5E7EB;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.bar {
+    height: 100%;
+    background: linear-gradient(to right, #4F46E5, #06B6D4);
+    border-radius: 10px;
+    animation: growBar 1s ease forwards;
+}
+
+/* Advice & Quote */
+.advice {
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.quote {
+    font-style: italic;
+    color: #374151;
+    margin-bottom: 12px;
+}
+
+/* Scores */
+.scores p {
+    font-size: 14px;
+    color: #374151;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #6B7280;
+    font-size: 14px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes growBar {
+    from {
+        width: 0;
+    }
+}
+
+/* 📱 Mobile Responsive */
+@media (max-width: 600px) {
+    .container {
+        margin: 20px;
+        padding: 22px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    textarea {
+        height: 120px;
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 15px;
+        padding: 12px;
+    }
+
+    .result {
+        padding: 18px;
+    }
+}
