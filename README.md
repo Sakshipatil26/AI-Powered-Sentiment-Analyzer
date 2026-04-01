@@ -105,6 +105,3 @@ Phone: +91 9309486402
 GitHub: https://github.com/Sakshipatil26
 
 
-You can copy this directly into a `README.md` file in your project.  
-
-If you want, I can also **add a section with a screenshot of your app in action**
